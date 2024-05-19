@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit card form</title>
+    <link rel="stylesheet" href="{% static 'base/raw.css' %}">
+</head>
+<body>
+    <main class="container">
+        <section class="ui">
+            <div class="container-left">
+                <h1>Credit card form</h1>
+                <form id="credit-card">
+                    <div class="name-container">
+                        <label>First And Last Name</label>
+                        <input type="text" name="card-name" id="name" maxlength="30" placeholder="ceras jacob" required onkeypress="return (event.charCode>64 && event.charCode<91) || (event.charCode>96 && event.charCode<123) ||(event.key==' ')">
+                    </div>
+                    <div class="infos-container">
+                        <div class="exp-container">
+                            <label>date of birth</label>
+                            <input type="text" name="valid-to" id="birth-from" maxlength="5" placeholder="12/31" required
+                            onkeypress="return event.charCode>=48&& event.charCode<=57">
+                        </div>
+                        <div class="cvc-container">
+                            <label>Pincode</label>
+                            <input type="text" name="cvc" id="pincode" maxlength="4" placeholder="1234" required
+                            onkeypress="return event.charCode>=48&& event.charCode<=57">
+                        </div>
+                    </div>
+                    <div class="submit-container">
+                        <input type="submit" value="Upload">
+                    </div>
+                </form>
+            </div>
+            <div class="container-right">
+                <div class="card">
+                    <div class="intern">
+                        <table style="width:100;">
+                            <tr>
+                                <th style="color: white;">Name</th>
+                                <th style="color: white;" colspan="2" >Date of birth</th>
+                                <th style="color: white;" >Pincode</th>
+                            </tr>
+                            <tr>
+                                <td style="color: white;" class="name-v1">ceras jacob</td>
+                                <td style="color: white;" class="birth-v1">12/09</td>
+                                <td style="color: white;" colspan="3" class="pin-v1">200</td>
+                            </tr>
+                         </table>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+    {% load static %}
+    <script src="{% static 'base/ju.js' %}"></script>
+</body>
+</html>
